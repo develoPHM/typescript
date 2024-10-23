@@ -4,7 +4,7 @@
 // logMessage("Hello World")
 // logMessage(10)
 function logMessage(value: string | number) {
-  console.log(value)
+  console.log(value, 'sd')
 }
 
 logMessage("Hello World")
@@ -54,4 +54,4 @@ function askSomeone2(someone: Developer & Person) {
 }
 
 askSomeone2({ name: '디벨로퍼', skill: '웹 개발', age: 100 });
-askSomeone2({ name: '캡틴', age: 100 });
+// askSomeone2({ name: '캡틴', age: 100 });
