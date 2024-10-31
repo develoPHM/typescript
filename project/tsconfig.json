@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES5",
+    "outDir": "./built", //저장위치
+    "moduleResolution": "node",
+  },
+  "include": [
+    "./src/app"
+  ], // 컴파일 할 대상
+}
