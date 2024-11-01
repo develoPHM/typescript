@@ -6,6 +6,9 @@
     // 저장위치
     "moduleResolution": "Node",
     "noImplicitAny": true,
+    "typeRoots": [
+      "./node_modules/@types", "./types"
+    ],
     "lib": [
       "ES2015",
       "DOM",
