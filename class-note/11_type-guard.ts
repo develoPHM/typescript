@@ -13,7 +13,8 @@ function introduce(): Developer | Person {
 }
 
 let tony = introduce();
-console.log(tony.name) // 유니언타입. 공통된 특성만 접근 가능
+// console.log(tony.skill) // 오류발생! 유니언타입. 공통된 특성만 접근 가능
+console.log(tony.name) // 정상. name 은 공통요소이기 때문
 
 if ((tony as Developer).skill) {
   let skill = (tony as Developer).skill;

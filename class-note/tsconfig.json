@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",                // ES6로 변환
+    "module": "commonjs",           // 모듈 시스템 설정
+    "outDir": "./dist",             // 컴파일된 파일 저장 경로
+    "rootDir": "./",             // 소스 파일 경로
+    "strict": true,                 // 엄격한 타입 검사
+    "esModuleInterop": true,        // ES6 모듈과 CommonJS 모듈 간의 호환성
+    "skipLibCheck": true,           // 라이브러리 파일 검사 생략
+    "forceConsistentCasingInFileNames": true // 파일 이름 대소문자 일관성 유지
+  },
+  "include": ["src/**/*"],          // 포함할 TypeScript 파일
+  "exclude": ["node_modules"]       // 제외할 디렉토리
+}

@@ -1,24 +1,37 @@
+// @ts-nocheck
+// 타입 추론 1
 let a = 'a'
 function getB(b = 10) {
   let c = 'hi';
   return b + c;
 }
+// 10 + '10' = 1010
 
+// 타입 추론 2
 interface Dropdown<T> {
   value: T;
   title: string;
 }
 
-interface Dropdown2<T> extends Dropdown<T>{
-  tag: T
+const shoppingItem: Dropdown<string> = {
+  value: 'abc',
+  title: 'hello'
+}
+
+// 타입 추론 3
+interface Dropdown<T> {
+  value: T;
+  title: string;
+}
+
+interface DetailedDropdown<K> extends Dropdown<K> {
   description: string;
+  tag: K;
 }
 
-
-let Item: Dropdown<string> = {
-  value: 'a',
-  title: 'b'
+const detailedItem: DetailedDropdown<string> = {
+  title: 'abc',
+  description: 'ab',
+  value: 'efg',
+  tag: 'tt'
 }
-console.log(Item)
-
-let arr = [0, 1, false];

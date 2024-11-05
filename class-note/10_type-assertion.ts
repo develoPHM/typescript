@@ -1,23 +1,10 @@
 // 타입 단언
-let a;
+var a;
 a = 20;
 a = 'a'
-let b = a as string
+var b = a // b는 any
+var c = a as string // c 는 string
 
 // DOM API 조작
-// <div id='app'/>
-let div = document.querySelector('#app');
-if (div) {
-  // div.innerText
-}
-interface human {
-  sayhi: string;
-  age:number;
-}
-
-let person = {} as human
-person.sayhi = 'hi'
-person.age = 33
-
-let per = {} as human
-console.log(per.sayhi)
+// <div id='app'> hello </div>
+var div = document.querySelector('div');
