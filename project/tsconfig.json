@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES5",
+    "outDir": "./built", // 타입스크립트 결과물 저장위치
+    "moduleResolution": "Node",
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "noImplicitAny": true
+  },
+  "include": ["./src/**/*"], // src 파일 대상
+
+}
