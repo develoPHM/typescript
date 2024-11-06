@@ -1,43 +1,32 @@
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  brand: string;
-  stock: number;
-}
-//
-// // 상품 목룍을 받아오기 위한 api 함수
-// function fetchProducts(): Promise<Product[]> {
-//   //.
-// }
-//
-// interface ProductDetail {
-//   id: number;
-//   name: string;
-//   price: number;
-// }
-//
-// type ShoppingItem = Pick<Product, 'id' | 'name' | 'price'>
-//
-// function displayProductDetail(shoppingItem: Pick<Product, 'id' | 'name' | 'price'>) {
-// }
-
-interface UpdateProduct {
-  id?: number;
-  name?: string;
-  price?: number;
-  brand?: string;
-  stock?: number;
+interface UserProfile {
+  username: string;
+  email: string;
+  profilePhotoUrl:string
 }
 
-// 특정 상품의 상세 정보를 나타내기 위한 함수
-type ShoppingItem = Pick<Product, 'id' | 'name' | 'price'>
-
-function displayProductDetail(shoppingItem: Pick<Product, 'id' | 'name' | 'price'>) {
+// 완성 단계 미리보기
+interface CompleteUserProfile {
+  username?: string;
+  email?: string;
+  profilePhotoUrl?:string
 }
-
-// 특정 상품 정보를 업데이트(갱신)하는 함수
-type UpadateProduct = Partial<Product>
-function updateProductItem(productItem: Partial<Product>) {
-
+// 1. 각각의 키를 가져와 넣기
+type step_1 = {
+  username: UserProfile['username'];
+  email: UserProfile['email'];
+  profilePhotoUrl: UserProfile['profilePhotoUrl'];
 }
+// 2. 반복해서 넣어주기 ( 맵드 타입 )
+type step_2 = {
+  [p in 'username' | 'email' | 'profilePhotoUrl' ]?: UserProfile[p]
+}
+// 3. 반복해서 넣어주기
+type update = keyof UserProfile
+type step_3 = {
+  [p in keyof UserProfile]?: UserProfile[p]
+}
+// partial 구현
+type step_4<T> = {
+  [p in keyof T]?: T[p]
+}
+// 완성
